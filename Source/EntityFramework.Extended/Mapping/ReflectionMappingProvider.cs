@@ -151,7 +151,8 @@ namespace EntityFramework.Mapping
 
         private static void SetProperties(EntityMap entityMap, dynamic mappingFragmentProxy)
         {
-            var propertyMaps = mappingFragmentProxy.PropertyMappings;
+            // 'PropertyMappings' is not working in EF6.1
+            var propertyMaps = mappingFragmentProxy.Properties; 
             foreach (var propertyMap in propertyMaps)
             {
                 // StorageScalarPropertyMapping
